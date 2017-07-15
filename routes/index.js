@@ -30,7 +30,7 @@ routes.get('/api/generateCypher', (req, res) => {
 });
 
 // POST (String: msg, String: cypher) => encrypted string.
-routes.post('/api/cypher', (req, res, next) => {
+routes.post('/api/cypher', (req, res) => {
     const msg = req.body.msg;
     const cypher = req.body.cypher;
 
