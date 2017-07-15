@@ -10,7 +10,9 @@ routes.use(function(req, res, next) {
 
 //GET => homepage
 routes.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.status(200).json({
+        message: 'Connected!'
+    });
 });
 
 //GET => nothing (for now)
