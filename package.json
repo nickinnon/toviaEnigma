@@ -1,0 +1,14 @@
+{
+  "name": "toviaEnigma",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "randomstring": "^1.1.5"
+  }
+}
