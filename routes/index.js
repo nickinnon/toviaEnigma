@@ -5,15 +5,16 @@ const CypherController = require('./../cypherController.js');
 
 // executed every request
 routes.use(function(req, res, next) {
+    console.log(req.body);
     next();
 });
 
 //GET => homepage
-routes.get('*', (req, res) => {
-    res.status(200).json({
-        message: 'Connected!'
-    });
-});
+// routes.get('*', (req, res) => {
+//     res.status(200).json({
+//         message: 'Connected!'
+//     });
+// });
 
 //GET => nothing (for now)
 routes.get('/api', (req, res) => {
@@ -35,7 +36,7 @@ routes.post('/api/cypher', (req, res) => {
     const cypher = req.body.cypher;
 
     res.status(200).json({
-        msg: `${cypherController.encrypt(msg, cypher)}`
+        msg: `${CypherController.encrypt(msg, cypher)}`
     });
 });
 
@@ -45,12 +46,9 @@ routes.post('/api/decypher', (req, res) => {
     const cypher = req.body.cypher;
 
     res.status(200).json({
-        msg: `${cypherController.decrypt(msg, cypher)}`
+        msg: `${CypherController.decrypt(msg, cypher)}`
     });
 });
 
-routes.get('/test', (req, res) => {
-    res.send('Hello World!');
-});
 
 module.exports = routes;
