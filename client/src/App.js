@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Button} from 'react-toolbox/lib/button/Button';
-//import { Button } from 'react-toolbox/lib/button';
+import Button from 'react-toolbox/lib/button/Button';
 
 class App extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       cypher: 'foo',
       msg: 'test'
-    }
+    };
+    this.getCypherAjax();
+  }
+
+  handleChange(e){
+    this.setState({value: e.target.value});
   }
 
   getCypherAjax(e){
@@ -60,13 +63,13 @@ class App extends Component {
 
     return (
       <section id="app">
-        <form id='form' action="" onSubmit={this.handleSubmit}>
-          <input name="msg" type="text" value={this.state.msg}></input>
-          <input name="cypher" type="text" value={this.state.cypher}></input>
-          <h1>Cypher is {this.state.cypher}</h1>
+        <h1>Tovia's Enigma</h1>
+        <form id='form' action="">
+          <input name="msg" type="text" value={this.state.msg} onChange={this.handleChange}></input>
+          <input name="msg" type="text" value={this.state.cypher} onChange={this.handleChange}></input>
           <Button label="get cypher" onClick={this.getCypherAjax.bind(this)}></Button>
           <Button label="Encrypt" onClick={this.encryptAjax.bind(this)}></Button>
-          <Button label="Dencrypt" onClick={this.decryptAjax.bind(this)}></Button>
+          <Button label="Decrypt" onClick={this.decryptAjax.bind(this)}></Button>
         </form>
       </section>
     );
