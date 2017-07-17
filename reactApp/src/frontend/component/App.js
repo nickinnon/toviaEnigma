@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Button from 'react-toolbox/lib/button/Button';
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
   }
 
   getCypherAjax(e){
-    //console.log(e);
+    console.log(e);
     fetch('/api/generateCypher')
       .then( res => res.json() )
       .then(cypher => this.setState(cypher)); //add the new cypher to state.
@@ -63,7 +62,7 @@ class App extends Component {
 
     return (
       <section id="app">
-        <h1>Tovia's Enigma</h1>
+        <h1>Tovia's Enigma!!</h1>
         <form id='form' action="">
           <input name="msg" type="text" value={this.state.msg} onChange={this.handleChange}></input>
           <input name="msg" type="text" value={this.state.cypher} onChange={this.handleChange}></input>

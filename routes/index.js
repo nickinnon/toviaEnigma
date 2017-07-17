@@ -19,7 +19,7 @@ routes.use(function(req, res, next) {
 //GET => nothing (for now)
 routes.get('/api', (req, res) => {
     res.status(200).json({
-        message: 'Connected!foo'
+        message: 'Connected!'
     });
 });
 
